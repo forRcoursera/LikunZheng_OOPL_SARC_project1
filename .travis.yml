@@ -29,12 +29,13 @@ install:
 before_script:
     - uname -a
     - printenv
+    - doxygen --version
     - g++-4.8 --version
-    - dpkg -l libgtest-dev
     - gcov-4.8 --version
-    - grep "#define BOOST_VERSION " /usr/include/boost/version.hpp
-    - valgrind --version
     - gprof --version
+    - grep "#define BOOST_VERSION " /usr/include/boost/version.hpp
+    - dpkg -l libgtest-dev
+    - valgrind --version
 
 script:
     - date
